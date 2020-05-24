@@ -4,7 +4,7 @@ html {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    font-family: "Montserrat";
+    font-family: 'Montserrat', sans-serif;
     scroll-behavior: smooth;
 }
 
@@ -34,9 +34,16 @@ header {
 header h1 {
     margin: 0;
     position: absolute;
-    top: 50%;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 24px;
+    font-size: 50px;
+    border-radius: 4px;
+    margin-top: 24px;
 }
 
 header,
@@ -128,20 +135,98 @@ div {
     margin-bottom: 20px;
   }
 }
+
 .team-title {
   position: static;
-  padding: 20px 0;
   display: inline-block;
   letter-spacing: 2px;
   width: 100%;
-  font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
 }
-.team-title h5 {
+
+.team-title .n1 {
+  margin-left: 78px;
   margin-bottom: 0px;
   display: block;
   text-transform: uppercase;
-  color: red;
+  color: #999999;
 }
+
+.team-title .n1-l {
+  margin-left: 73px;
+  margin-bottom: 0px;
+  display: block;
+  text-transform: uppercase;
+  color: black;
+}
+
+.team-title .n2 {
+  margin-left: 85px;
+  margin-bottom: 0px;
+  display: block;
+  text-transform: uppercase;
+  color: #999999;
+}
+
+.team-title .n2-l {
+  margin-left: 62px;
+  margin-bottom: 0px;
+  display: block;
+  text-transform: uppercase;
+  color: black;
+}
+
+
+.team-title .n3 {
+  margin-left: 76px;
+  margin-bottom: 0px;
+  display: block;
+  text-transform: uppercase;
+  color: #999999;
+}
+
+.team-title .n3-l {
+  margin-left: 76px;
+  margin-bottom: 0px;
+  display: block;
+  text-transform: uppercase;
+  color: black;
+}
+
+
+.team-title .n4 {
+  margin-left: 254px;
+  margin-bottom: 0px;
+  display: block;
+  text-transform: uppercase;
+  color: #999999;
+}
+
+.team-title .n4-l {
+	margin-top: 8px;
+  margin-left: 250px;
+  margin-bottom: 0px;
+  display: block;
+  text-transform: uppercase;
+  color: black;
+}
+
+.team-title .n5 {
+  margin-left: 92px;
+  margin-bottom: 0px;
+  display: block;
+  text-transform: uppercase;
+  color: #999999;
+}
+
+.team-title .n5-l {
+  margin-left: 76px;
+  margin-bottom: 0px;
+  display: block;
+  text-transform: uppercase;
+  color: black;
+}
+
 .team-title span {
   font-size: 12px;
   text-transform: uppercase;
@@ -152,102 +237,6 @@ div {
     margin: 0;
 }
 
-.shop {
-  height: 420px;
-  width: 654px;
-  margin-left: 200px;
-  margin-top: 100px;
-  border-radius: 7px 7px 7px 7px;
-  display: inline-block;
-}
-
-.product-img {
-  float: left;
-  height: 420px;
-  width: 327px;
-}
-
-.product-img img {
-  border-radius: 7px 0 0 7px;
-}
-
-.product-info {
-  float: left;
-  height: 420px;
-  width: 327px;
-  border-radius: 0 7px 10px 7px;
-  background-color: #EDFFC7;
-}
-
-.product-text {
-  height: 300px;
-  width: 327px;
-}
-
-.product-text h1 {
-  margin: 0 0 0 38px;
-  padding-top: 52px;
-  font-size: 34px;
-  color: #474747;
-}
-.product-text p{
-    margin-top: 100px;
-}
-.btn {
-  height: 103px;
-  width: 327px;
-  position: relative;
-}
-
-.btn p {
-  display: inline-block;
-  position: absolute;
-  top: -13px;
-  height: 50px;
-  font-family: 'Trocchi', serif;
-  margin: 0 0 0 38px;
-  font-size: 28px;
-  font-weight: lighter;
-  color: #474747;
-}
-
-span {
-  display: inline-block;
-  height: 50px;
-  font-family: 'Suranna', serif;
-  font-size: 34px;
-}
-
-.btn button {
-  align-content: center;
-  display: inline-block;
-  height: 50px;
-  width: 176px;
-  margin: 0 40px 0 16px;
-  box-sizing: border-box;
-  border: transparent;
-  border-radius: 60px;
-  font-family: 'Raleway', sans-serif;
-  font-size: 14px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  color: #ffffff;
-  background-color: #9cebd5;
-  cursor: pointer;
-  outline: none;
-  margin-left: 80px;
-}
-
-.btn button:hover {
-  background-color: #79b0a1;
-}
-
-.contact{
-    background-color: #7CB715;
-    height: auto;
-    width: 100%;
-}
 .bttn {
   background-color: #4CAF50;
   border: none;
@@ -259,4 +248,113 @@ span {
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
+}
+
+.column1 .shop{
+	width: 527px;
+	height: 320px;
+	background-color: #413756;
+	display: inline-block;
+	border-radius: 5px;
+	margin-top: 20px;
+	margin-left: 88px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  	text-align: center;
+}
+
+.column1 .shop .product-img{
+	float: left;
+	width: 227px;
+	height: 320px;
+}
+
+.column1 .shop .product-info{
+	float: right;
+	margin-right: 60px;
+	margin-top: 90px; 	
+}
+
+.product-text h1{
+	color: white;
+}
+
+.product-text p{
+	font-size: 24px;
+	margin-top: 40px;
+	color: white;
+}
+
+.btn {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 4px;
+    margin-top: 24px;
+}
+
+.btn:hover {
+	border-color: #7CB715;
+    background-color: #7CB715;
+    transition: ease-in-out 0.1s;
+    color: white;
+}
+
+/* DOWN ARROW ANIMATION. DIVI, PRAKHAR DONT TOUCH PLEASE. <3 */
+#section07 a {
+  padding-top: 80px;
+}
+#section07 a span {
+  color: white;
+  position: absolute;
+  top: 650px;
+  left: 50%;
+  width: 24px;
+  height: 24px;
+  margin-left: -12px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-animation: sdb07 2s infinite;
+  animation: sdb07 2s infinite;
+  opacity: 0;
+  box-sizing: border-box;
+}
+#section07 a span:nth-of-type(1) {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+#section07 a span:nth-of-type(2) {
+  top: 666px;
+  -webkit-animation-delay: .15s;
+  animation-delay: .15s;
+}
+#section07 a span:nth-of-type(3) {
+  top: 682px;
+  -webkit-animation-delay: .3s;
+  animation-delay: .3s;
+}
+@-webkit-keyframes sdb07 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes sdb07 {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
