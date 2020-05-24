@@ -85,8 +85,12 @@ h1,p {
 .txt{
     margin: 2% 13% 3% 13%;
 }
-.img{
+.txt1{
+    margin: 10% 0% 3% 30%;
+}
+.img:hover{
     box-shadow: 30px 30px #7CB715;
+    transition: ease-in-out 0.3s;
 }
 *{
 margin: 0px;
@@ -253,7 +257,7 @@ div {
 .column1 .shop{
 	width: 527px;
 	height: 320px;
-	background-color: #413756;
+	background-color: #7CB715;
 	display: inline-block;
 	border-radius: 5px;
 	margin-top: 20px;
@@ -290,15 +294,16 @@ div {
     border: 1px solid #fff;
     padding: 12px 24px;
     font-size: 18px;
-    border-radius: 4px;
+    border-radius: 50px;
     margin-top: 24px;
 }
 
 .btn:hover {
 	border-color: #7CB715;
-    background-color: #7CB715;
+    background-color: #fff;
     transition: ease-in-out 0.1s;
-    color: white;
+    color: black;
+    cursor: pointer;
 }
 
 /* DOWN ARROW ANIMATION. DIVI, PRAKHAR DONT TOUCH PLEASE. <3 */
