@@ -1,340 +1,215 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Book Seats!</title>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-	<style type="text/css">
-body {
-  margin: 60px;
-  background: #111;
-}
+  <head>
+    <title>Book Seats!</title>
+    <link rel="stylesheet" href="booking.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
-.theatre {
-  display: flex;
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
+  </head>
+  <body>
+    <div class="theatre">
+      <div class="cinema-seats left">
+        <div class="cinema-row row-1">
+          <h1 class="rows"></h1>
+          <div class="columns">A</div>
+          <div class="columns">B</div>
+          <div class="columns">C</div>
+          <div class="columns">D</div>
+          <div class="columns">E</div>
+          <div class="columns">F</div>
+          <div class="columns">G</div>
+        </div>
+        <div class="cinema-row row-1">
+          <h1 class="rows">1</h1>
+          <div class="seat A1"></div>
+          <div class="seat B1"></div>
+          <div class="seat C1"></div>
+          <div class="seat D1"></div>
+          <div class="seat E1"></div>
+          <div class="seat F1"></div>
+          <div class="seat G1"></div>
+        </div>
 
-.cinema-seats {
-  display: flex;
-}
+        <div class="cinema-row row-2">
+          <h1 class="rows">2</h1>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
 
-.cinema-seats .seat {
-  cursor: pointer;
-}
+        <div class="cinema-row row-3">
+          <h1 class="rows">3</h1>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
 
-.cinema-seats .seat:hover:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  border-radius: 7px;
-}
+        <div class="cinema-row row-4">
+          <h1 class="rows">4</h1>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
 
-.cinema-seats .seat.active:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.6);
-  border-radius: 7px;
-}
+        <div class="cinema-row row-5">
+          <h1 class="rows">5</h1>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
 
-.left .cinema-row {
-  transform: skew(-15deg);
-  margin: 0 6px;
-}
+        <div class="cinema-row row-6">
+          <h1 class="rows">6</h1>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
 
-.left .seat {
-  width: 35px;
-  height: 50px;
-  border-radius: 7px;
-  background: linear-gradient(to top, #761818, #761818, #761818, #761818, #761818, #B54041, #F3686A);
-  margin-bottom: 10px;
-  transform: skew(20deg);
-  margin-top: -32px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-}
+        <div class="cinema-row row-7">
+          <h1 class="rows">7</h1>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
+      </div>
 
-.left .row-2 {
-  transform: skew(-13deg);
-}
+      <div class="cinema-seats right">
+        <div class="cinema-row row-1">
+          <h1 class="rows">8</h1>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
 
-.left .row-2 .seat {
-  transform: skew(18deg);
-}
+        <div class="cinema-row row-2">
+          <h1 class="rows">9</h1>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
 
-.left .row-3 {
-  transform: skew(-12deg);
-}
+        <div class="cinema-row row-3">
+          <h1 class="rows">10</h1>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
 
-.left .row-3 .seat {
-  transform: skew(16deg);
-}
+        <div class="cinema-row row-4">
+          <h1 class="rows">11</h1>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
 
-.left .row-4 {
-  transform: skew(-11deg);
-}
+        <div class="cinema-row row-5">
+          <h1 class="rows">12</h1>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
 
-.left .row-4 .seat {
-  transform: skew(15deg);
-}
+        <div class="cinema-row row-6">
+          <h1 class="rows">13</h1>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
 
-.left .row-5 {
-  transform: skew(-10deg);
-}
-
-.left .row-5 .seat {
-  transform: skew(12deg);
-}
-
-.left .row-6 {
-  transform: skew(-9deg);
-}
-
-.left .row-6 .seat {
-  transform: skew(10deg);
-}
-
-.left .row-7 {
-  transform: skew(-7deg);
-}
-
-.left .row-7 .seat {
-  transform: skew(8deg);
-}
-
-.right {
-  margin-left: 70px;
-}
-
-.right .cinema-row {
-  transform: skew(7deg);
-  margin: 0 6px;
-}
-
-.right .seat {
-  width: 35px;
-  height: 50px;
-  border-radius: 7px;
-  background: linear-gradient(to top, #761818, #761818, #761818, #761818, #761818, #B54041, #F3686A);
-  margin-bottom: 10px;
-  transform: skew(-8deg);
-  margin-top: -32px;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-}
-
-.right .row-2 {
-  transform: skew(9deg);
-}
-
-.right .row-2 .seat {
-  transform: skew(-10deg);
-}
-
-.right .row-3 {
-  transform: skew(10deg);
-}
-
-.right .row-3 .seat {
-  transform: skew(-12deg);
-}
-
-.right .row-4 {
-  transform: skew(11deg);
-}
-
-.right .row-4 .seat {
-  transform: skew(-15deg);
-}
-
-.right .row-5 {
-  transform: skew(12deg);
-}
-
-.right .row-5 .seat {
-  transform: skew(-16deg);
-}
-
-.right .row-6 {
-  transform: skew(13deg);
-}
-
-.right .row-6 .seat {
-  transform: skew(-18deg);
-}
-
-.right .row-7 {
-  transform: skew(15deg);
-}
-
-.right .row-7 .seat {
-  transform: skew(-20deg);
-}
-	</style>
-</head>
-<body>
-	<div class="theatre">
-  
-  <div class="cinema-seats left">
-    <div class="cinema-row row-1">
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
+        <div class="cinema-row row-7">
+          <h1 class="rows">14</h1>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+          <div class="seat"></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h1 class="booked"></h1>
+      <h1 class="seatsbooked"></h1>
     </div>
 
-    <div class="cinema-row row-2">
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-    </div>
-
-    <div class="cinema-row row-3">
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-    </div>
-
-    <div class="cinema-row row-4">
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-    </div>
-
-    <div class="cinema-row row-5">
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-    </div>
-
-    <div class="cinema-row row-6">
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-    </div>
-
-    <div class="cinema-row row-7">
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-    </div>
-  </div>
-
-
-  <div class="cinema-seats right">
-    <div class="cinema-row row-1">
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-    </div>
-
-    <div class="cinema-row row-2">
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-    </div>
-
-    <div class="cinema-row row-3">
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-    </div>
-
-    <div class="cinema-row row-4">
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-    </div>
-
-    <div class="cinema-row row-5">
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-    </div>
-
-    <div class="cinema-row row-6">
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-    </div>
-
-    <div class="cinema-row row-7">
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-      <div class="seat"></div>
-    </div>
-  </div>
-  
-</div>
-
-
-<script type="text/javascript">
-	$('.cinema-seats .seat').on('click', function() {
-  $(this).toggleClass('active');
-});
-</script>
-
-
-</body>
+    <script type="text/javascript">
+      let seatnametemp = "";
+      $(".cinema-seats .seat").on("click", function () {
+        seatnametemp = "";
+        $(this).toggleClass("active");
+        let active = $(".seat.active");
+        active.each(function () {
+          let seatsPerRow = $(this).parent().find(".seat").length;
+          if (!$(this).closest(".cinema-seats").hasClass("right")) {
+            let prevRows =
+              $(this).parent(".cinema-row").prevAll(".cinema-row").length - 1;
+            seatnametemp +=
+              (prevRows + 1).toString() +
+              ($(this).index() + 9).toString(36).toUpperCase() +
+              " ";
+          } else {
+            let leftSeats = $(".left").find(".seat").length;
+            let prevRows = $(this).parent(".cinema-row").prevAll(".cinema-row")
+              .length;
+            seatnametemp +=
+              (prevRows + 8).toString() +
+              ($(this).index() + 9).toString(36).toUpperCase() +
+              " ";
+          }
+        });
+        var bookedSeats = document.querySelectorAll(".active").length;
+        document.querySelector(".booked").innerHTML = bookedSeats + " Booked";
+        document.querySelector(".seatsbooked").innerHTML = seatnametemp;
+      });
+    </script>
+  </body>
 </html>
