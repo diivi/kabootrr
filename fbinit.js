@@ -10,3 +10,7 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore();
+<<<<<<< HEAD
+=======
+//divyanshanandsingh@gmail.com
+>>>>>>> 3764dc4cc46198776012a61665f29e097ea1dbe7
