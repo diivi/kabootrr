@@ -242,6 +242,7 @@
     <script>
       var currr = localStorage.getItem("currentuser");
       var bookHogayi = "";
+      var kisneki = "";
       var cloned = "";
       window.onload = function checkuser() {
         if (currr === "") {
@@ -260,9 +261,10 @@
               querySnapshot.forEach(function (doc) {
                 // doc.data() is never undefined for query doc snapshots
                 bookHogayi += doc.id + " ";
+                kisneki += doc.get("seatOwner") + " ";
               });
               document.querySelector(".hochuki").innerHTML = bookHogayi;
-              dekhle(bookHogayi);
+              dekhle(bookHogayi, kisneki);
             });
         }
       };
@@ -282,6 +284,7 @@
               .doc(finalSeats.trim().split(" ")[i])
               .set({
                 seatNumber: finalSeats.trim().split(" ")[i],
+                seatOwner: currr,
               });
           }
           $("#notlog").remove();
@@ -297,21 +300,26 @@
       window.onbeforeunload = function (e) {
         return "Don't leave";
       };
-      function dekhle(allBooked) {
+      function dekhle(allBooked, bande) {
         var eachSeat = allBooked.toString().split(" ");
         eachSeat.remove("");
+        var eachOwner = bande.split(" ");
         for (i = 0; i < eachSeat.length; i++) {
           var number = 0;
           var numberfromString = 0;
-          number = eachSeat[i][0];
-          var letter = eachSeat[i][1];
+
+          var str = eachSeat[i];
+          var matches = str.match(/(\d+)/);
+
+          number = matches[0];
+          var letter = eachSeat[i].replace(/[0-9]/g, "").toString();
           numberfromString = letter.toLowerCase().charCodeAt(0) - 97 + 1;
-          getSeat(number, numberfromString);
+          owner = eachOwner[i];
+          getSeat(number, numberfromString, owner);
         }
       }
-      function getSeat(num, letr) {
+      function getSeat(num, letr, prsn) {
         letr += 1;
-        console.log(num.toString() + letr.toString());
         if (num <= 7) {
           var selector =
             ".left .row-" +
@@ -319,8 +327,12 @@
             " .seat:nth-child(" +
             letr.toString() +
             ")";
-          $(selector).addClass("bookedHai");
-        } else {
+          if (currr === prsn) {
+            $(selector).addClass("same");
+          } else {
+            $(selector).addClass("different");
+          }
+        } else if (num > 7) {
           num -= 7;
           var selector =
             ".right .row-" +
@@ -328,7 +340,12 @@
             " .seat:nth-child(" +
             letr.toString() +
             ")";
-          $(selector).addClass("bookedHai");
+          if (currr === prsn) {
+            $(selector).addClass("same");
+          } else {
+            $(selector).addClass("different");
+          }
+        } else if (num >= 10) {
         }
       }
     </script>

@@ -210,8 +210,13 @@ html {
   font-family: "Montserrat";
   scroll-behavior: smooth;
 }
-.bookedHai {
+.same {
   background: blue !important;
+  cursor: default !important;
+  pointer-events: none !important;
+}
+.different {
+  background: yellow !important;
   cursor: default !important;
   pointer-events: none !important;
 }
