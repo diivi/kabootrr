@@ -294,6 +294,9 @@
     <!-- Verification and Adding Booked seats to firebase end -->
     <!-- Disable seats that are already booked -->
     <script>
+      window.onbeforeunload = function (e) {
+        return "Don't leave";
+      };
       function dekhle(allBooked) {
         var eachSeat = allBooked.toString().split(" ");
         eachSeat.remove("");
