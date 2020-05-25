@@ -101,10 +101,14 @@ h1,p {
     margin right: 30px;
     margin-left: 80px;
 }
+.img{
+  float: right;
+  margin-top: 6%;
+}
 .img:hover{
     box-shadow: 20px 20px #7CB715;
     transition: ease-in-out 0.3s;
-    opacity: 40%;
+    opacity: 70%;
 }
 *{
 margin: 0px;
@@ -252,9 +256,20 @@ div {
   letter-spacing: 1px;
 }
 .cast{
-    margin: 0;
+    margin-left: 5%
 }
-
+.cast-head{
+  text-align: center;
+  margin-left: 130px;
+  font-size: 60px;
+}
+.yo{
+  display: block; 
+  margin-left: 175px;
+}
+.row{
+  margin: 0 13% 0 15%
+}
 .bttn {
   background-color: #4CAF50;
   border: none;
