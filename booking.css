@@ -19,7 +19,7 @@ body {
   cursor: pointer;
 }
 
-.cinema-seats .seat:hover:before {
+.cinema-seats .seat:not(.bookedHai):hover:before {
   content: "";
   position: absolute;
   top: 0;
@@ -189,7 +189,8 @@ body {
   transform: skew(-20deg);
 }
 .booked,
-.seatsbooked {
+.seatsbooked,
+.hochuki {
   color: white;
 }
 .rows {
@@ -208,4 +209,9 @@ html {
   overflow: hidden;
   font-family: "Montserrat";
   scroll-behavior: smooth;
+}
+.bookedHai {
+  background: blue !important;
+  cursor: default !important;
+  pointer-events: none !important;
 }

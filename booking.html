@@ -182,19 +182,36 @@
       <div>
         <h1 class="booked"></h1>
         <h1 class="seatsbooked"></h1>
+        <h1 class="hochuki"></h1>
         <button class="btn" onclick="showDialog()">Book</button>
       </div>
     </div>
     <div id="log">
       <p style="color: whitesmoke;">Pls login</p>
     </div>
+    <div id="thanku">
+      <p style="color: whitesmoke;">Thx :p</p>
+    </div>
 
     <!-- Seat Selection -->
     <script type="text/javascript">
+      Array.prototype.remove = function () {
+        var what,
+          a = arguments,
+          L = a.length,
+          ax;
+        while (L && this.length) {
+          what = a[--L];
+          while ((ax = this.indexOf(what)) !== -1) {
+            this.splice(ax, 1);
+          }
+        }
+        return this;
+      };
       let seatnametemp = "";
       $(".cinema-seats .seat").on("click", function () {
         seatnametemp = "";
-        $(this).toggleClass("active");
+        $(this).toggleClass("active"); // yaha if statement
         let active = $(".seat.active");
         active.each(function () {
           let seatsPerRow = $(this).parent().find(".seat").length;
@@ -221,17 +238,32 @@
       });
     </script>
     <!-- Seat Selection end  -->
+    <!-- Verification and Adding Booked seats to firebase -->
     <script>
       var currr = localStorage.getItem("currentuser");
+      var bookHogayi = "";
+      var cloned = "";
       window.onload = function checkuser() {
         if (currr === "") {
           $("#notlog").remove();
+          $("#thanku").hide();
         } else {
           $("#log").remove();
+          $("#thanku").hide();
           var docRef = db.collection("users").doc(currr);
           docRef.get().then(function (doc) {
             console.log("Document data:", doc.data());
           });
+          db.collection("seats")
+            .get()
+            .then(function (querySnapshot) {
+              querySnapshot.forEach(function (doc) {
+                // doc.data() is never undefined for query doc snapshots
+                bookHogayi += doc.id + " ";
+              });
+              document.querySelector(".hochuki").innerHTML = bookHogayi;
+              dekhle(bookHogayi);
+            });
         }
       };
       window.onunload = function checkuser() {
@@ -245,17 +277,59 @@
             finalSeats
         );
         if (ready === true) {
-          var x = finalSeats.split(" ");
-          db.collection("bookedseats").doc("LA").set({
-    name: "Los Angeles",
-    state: "CA",
-    country: "USA"
-})
+          for (i = 0; i < finalSeats.trim().split(" ").length; i++) {
+            db.collection("seats")
+              .doc(finalSeats.trim().split(" ")[i])
+              .set({
+                seatNumber: finalSeats.trim().split(" ")[i],
+              });
+          }
+          $("#notlog").remove();
+          $("#thanku").show();
         } else {
           console.log("lolgareeb");
         }
       }
     </script>
+    <!-- Verification and Adding Booked seats to firebase end -->
+    <!-- Disable seats that are already booked -->
+    <script>
+      function dekhle(allBooked) {
+        var eachSeat = allBooked.toString().split(" ");
+        eachSeat.remove("");
+        for (i = 0; i < eachSeat.length; i++) {
+          var number = 0;
+          var numberfromString = 0;
+          number = eachSeat[i][0];
+          var letter = eachSeat[i][1];
+          numberfromString = letter.toLowerCase().charCodeAt(0) - 97 + 1;
+          getSeat(number, numberfromString);
+        }
+      }
+      function getSeat(num, letr) {
+        letr += 1;
+        console.log(num.toString() + letr.toString());
+        if (num <= 7) {
+          var selector =
+            ".left .row-" +
+            num.toString() +
+            " .seat:nth-child(" +
+            letr.toString() +
+            ")";
+          $(selector).addClass("bookedHai");
+        } else {
+          num -= 7;
+          var selector =
+            ".right .row-" +
+            num.toString() +
+            " .seat:nth-child(" +
+            letr.toString() +
+            ")";
+          $(selector).addClass("bookedHai");
+        }
+      }
+    </script>
+    <!-- Disable seats that are already booked end -->
     <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
   </body>
