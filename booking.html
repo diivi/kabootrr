@@ -182,36 +182,19 @@
       <div>
         <h1 class="booked"></h1>
         <h1 class="seatsbooked"></h1>
-        <h1 class="hochuki"></h1>
         <button class="btn" onclick="showDialog()">Book</button>
       </div>
     </div>
     <div id="log">
       <p style="color: whitesmoke;">Pls login</p>
     </div>
-    <div id="thanku">
-      <p style="color: whitesmoke;">Thx :p</p>
-    </div>
 
     <!-- Seat Selection -->
     <script type="text/javascript">
-      Array.prototype.remove = function () {
-        var what,
-          a = arguments,
-          L = a.length,
-          ax;
-        while (L && this.length) {
-          what = a[--L];
-          while ((ax = this.indexOf(what)) !== -1) {
-            this.splice(ax, 1);
-          }
-        }
-        return this;
-      };
       let seatnametemp = "";
       $(".cinema-seats .seat").on("click", function () {
         seatnametemp = "";
-        $(this).toggleClass("active"); // yaha if statement
+        $(this).toggleClass("active");
         let active = $(".seat.active");
         active.each(function () {
           let seatsPerRow = $(this).parent().find(".seat").length;
@@ -238,62 +221,66 @@
       });
     </script>
     <!-- Seat Selection end  -->
-    <!-- Verification and Adding Booked seats to firebase -->
     <script>
-      var currr = localStorage.getItem("currentuser");
-      var bookHogayi = "";
-      var kisneki = "";
-      var cloned = "";
-      window.onload = function checkuser() {
-        if (currr === "") {
-          $("#notlog").remove();
-          $("#thanku").hide();
-        } else {
-          $("#log").remove();
-          $("#thanku").hide();
-          var docRef = db.collection("users").doc(currr);
-          docRef.get().then(function (doc) {
-            console.log("Document data:", doc.data());
-          });
-          db.collection("seats")
-            .get()
-            .then(function (querySnapshot) {
-              querySnapshot.forEach(function (doc) {
-                // doc.data() is never undefined for query doc snapshots
-                bookHogayi += doc.id + " ";
-                kisneki += doc.get("seatOwner") + " ";
-              });
-              document.querySelector(".hochuki").innerHTML = bookHogayi;
-              dekhle(bookHogayi, kisneki);
-            });
-        }
-      };
-      window.onunload = function checkuser() {
-        localStorage.setItem("currentuser", "");
-      };
-      function showDialog() {
-        finalSeats = document.querySelector(".seatsbooked").innerHTML;
-        ready = confirm(
-          "Are you sure you want to book the following seats for ₹" +
-            " 200 : \n" +
-            finalSeats
-        );
-        if (ready === true) {
-          for (i = 0; i < finalSeats.trim().split(" ").length; i++) {
-            db.collection("seats")
-              .doc(finalSeats.trim().split(" ")[i])
-              .set({
-                seatNumber: finalSeats.trim().split(" ")[i],
-                seatOwner: currr,
-              });
-          }
-          $("#notlog").remove();
-          $("#thanku").show();
-        } else {
-          console.log("lolgareeb");
-        }
-      }
+            var currr = localStorage.getItem("currentuser");
+      <<<<<<< HEAD
+            var bookHogayi = "";
+            var kisneki = "";
+            var cloned = "";
+      =======
+      >>>>>>> 03bae5aa7a4176547fabb33212b26222042f2c41
+            window.onload = function checkuser() {
+              if (currr === "") {
+                $("#notlog").remove();
+              } else {
+                $("#log").remove();
+                var docRef = db.collection("users").doc(currr);
+                docRef.get().then(function (doc) {
+                  console.log("Document data:", doc.data());
+                });
+      <<<<<<< HEAD
+                db.collection("seats")
+                  .get()
+                  .then(function (querySnapshot) {
+                    querySnapshot.forEach(function (doc) {
+                      // doc.data() is never undefined for query doc snapshots
+                      bookHogayi += doc.id + " ";
+                      kisneki += doc.get("seatOwner") + " ";
+                    });
+                    document.querySelector(".hochuki").innerHTML = bookHogayi;
+                    dekhle(bookHogayi, kisneki);
+                  });
+      =======
+      >>>>>>> 03bae5aa7a4176547fabb33212b26222042f2c41
+              }
+            };
+            window.onunload = function checkuser() {
+              localStorage.setItem("currentuser", "");
+            };
+            function showDialog() {
+              finalSeats = document.querySelector(".seatsbooked").innerHTML;
+              ready = confirm(
+                "Are you sure you want to book the following seats for ₹" +
+                  " 200 : \n" +
+                  finalSeats
+              );
+              if (ready === true) {
+                for (i = 0; i < finalSeats.trim().split(" ").length; i++) {
+                  db.collection("seats")
+                    .doc(finalSeats.trim().split(" ")[i])
+                    .set({
+                      seatNumber: finalSeats.trim().split(" ")[i],
+                      seatOwner: currr,
+                    });
+                }
+                $("#notlog").remove();
+                $("#thanku").show();
+              } else {
+                console.log("lolgareeb");
+              }
+            }
     </script>
+    <<<<<<< HEAD
     <!-- Verification and Adding Booked seats to firebase end -->
     <!-- Disable seats that are already booked -->
     <script>
