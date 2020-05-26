@@ -47,21 +47,30 @@ body {
 
   background-color: #7cb715;
 }
-.row {
-  width: 100%;
-  height: 40vh;
-}
 .item {
   width: 30%;
   height: auto;
   display: inline-block;
   margin-left: 30px;
+  position: relative;
 }
 .item img {
   height: 100%;
   width: 100%;
-  display: inline-block;
-  background-size: cover;
+}
+.item .name {
+  font-size: 18px;
+  position: absolute;
+  left: 48%;
+  top: 40px;
+}
+.options {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+}
+.options h1 {
+  font-size: 1.2rem;
 }
 .hometext {
   width: 80vw;
@@ -138,6 +147,17 @@ body {
 
 /* Clear floats after the columns */
 @media only screen and (max-width: 1000px) {
+  .item {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-left: 0px;
+  }
+  .item img {
+    height: 100%;
+    width: 100%;
+    display: block;
+  }
   .map {
     width: 300px !important;
     height: 500px !important;
@@ -247,9 +267,6 @@ body {
     margin-top: 70%;
   }
 }
-.row {
-  margin-left: 0%;
-}
 .map {
   display: inline-block;
   width: 30vw;
@@ -262,6 +279,23 @@ body {
   display: inline-block;
   border-radius: 50px;
   padding: 2% 10%;
+}
+.buy {
+  display: block;
+  background-color: #7cb715;
+  border: none;
+  padding: 5% 5%;
+  cursor: pointer;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  margin-left: 100%;
+  margin-bottom: 5%;
+}
+@media only screen and (max-width: 1600px) {
+  .buy {
+    transform: translateX(-50%);
+  }
 }
 .form input,
 .form textarea {
