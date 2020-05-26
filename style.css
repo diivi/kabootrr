@@ -118,7 +118,6 @@ body {
   float: left;
   width: 50%;
   padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
 }
 
 /* Clear floats after the columns */
@@ -170,7 +169,7 @@ body {
   }
   .bookkarlo:hover {
     background-color: white;
-    color: #11e95b;
+    color: #7cb715;
     transition: 0.3s linear;
   }
   .pehle {
@@ -405,4 +404,54 @@ body {
 }
 .row {
   margin-left: 0%;
+}
+.map {
+  display: inline-block;
+  width: 30vw;
+  margin-left: 15%;
+  margin-right: -10%;
+}
+.form {
+  background-color: #f8f8f8;
+  float: left;
+  display: inline-block;
+  border-radius: 50px;
+  padding: 2% 10%;
+}
+.form input {
+  display: block;
+  border-radius: 20px;
+  font-size: 20px;
+  padding: 5px 10px;
+  width: 120%;
+  margin: 20px -10%;
+  background-color: #f1f1f1;
+}
+.msg {
+  display: block;
+  height: 200px;
+}
+.cont {
+  margin-top: 5%;
+}
+.cont .headings {
+  font-size: 2rem;
+}
+.formsub {
+  margin-top: 10%;
+  border-radius: 200px;
+  background-color: #7cb715;
+  padding: 2% 4%;
+  cursor: pointer;
+  font-size: 32px;
+  color: white;
+  float: right;
+  border: none;
+  margin-right: -10%;
+}
+.support {
+  float: left;
+  margin-top: -16vh;
+  margin-left: 2%;
+  color: #7cb715;
 }
