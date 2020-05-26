@@ -155,7 +155,10 @@
         colour = 'black'
       }
     $('.buy').click(function(){
-        $('#prod').attr('src','./images/'+colour+'.png')
+        $('#prod').fadeOut(200, function() {
+          $("#prod").attr('src','./images/'+colour+'.png')
+        })
+        .fadeIn(200);
       })
     </script>
   </body>
