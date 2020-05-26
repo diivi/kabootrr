@@ -105,7 +105,7 @@ body {
   background-color: white;
 }
 #contact {
-  background-color: #f1f1f1;
+  background-color: #ffffff;
 }
 #cast img {
   width: 20%;
@@ -142,7 +142,7 @@ body {
     font-size: 16px;
   }
   .form {
-    background-color: #f8f8f8;
+    background-color: #e5e5e5;
     display: block;
     border-radius: 50px;
     padding: 2% 10%;
@@ -150,27 +150,31 @@ body {
   .form h1 {
     font-size: 30px !important;
   }
-  .form input {
+  .form input,
+  textarea {
     display: block;
     border-radius: 20px;
     font-size: 20px;
     padding: 5px 10px;
     width: 90% !important;
     margin: 20px !important;
-    background-color: #f1f1f1;
+    background-color: #cecece;
+    resize: none;
+    resize: none;
   }
+
   .formsub {
     margin-top: 0% !important;
     border-radius: 200px;
     background-color: #7cb715;
-    padding: 2% 4% !important;
+    padding: 3% 6% !important;
     cursor: pointer;
     font-size: 20px !important;
     color: white;
     float: right;
     border: none;
-    margin-right: 10% !important;
-    margin-bottom: 10% !important;
+    margin-right: 0% !important;
+    margin-bottom: 3% !important;
   }
   #home h1 {
     color: blue;
@@ -227,7 +231,6 @@ body {
     margin-top: 70%;
   }
 }
-
 .container {
   width: 280px;
   height: 500px;
@@ -462,24 +465,27 @@ body {
   margin-right: -10%;
 }
 .form {
-  background-color: #f8f8f8;
+  background-color: #e5e5e5;
   float: left;
   display: inline-block;
   border-radius: 50px;
   padding: 2% 10%;
 }
-.form input {
+.form input,
+.form textarea {
   display: block;
   border-radius: 20px;
   font-size: 20px;
   padding: 5px 10px;
-  width: 120%;
-  margin: 20px -10%;
-  background-color: #f1f1f1;
+  width: 140%;
+  margin: 20px -20%;
+  background-color: #cecece;
+  border: none;
+  resize: none;
 }
 .msg {
   display: block;
-  height: 200px;
+  height: 120px;
 }
 .cont {
   margin-top: 5%;
@@ -488,19 +494,23 @@ body {
   font-size: 2rem;
 }
 .formsub {
-  margin-top: 10%;
+  margin-top: 5%;
   border-radius: 200px;
   background-color: #7cb715;
-  padding: 2% 4%;
+  padding: 4%8%;
   cursor: pointer;
-  font-size: 32px;
+  font-size: 24px;
   color: white;
   float: right;
   border: none;
-  margin-right: -10%;
+  margin-right: -20%;
 }
 .support {
-  margin-top: -16vh;
+  margin-top: -22vh;
   margin-left: 2%;
   color: #7cb715;
+}
+input::placeholder {
+  opacity: 0.3;
+  color: black;
 }
