@@ -28,7 +28,7 @@
       <div class="pehle">
         <img class="hometext" src="./images/hometext.png" alt="" />
 
-          <button class="bookkarlo">Book Now!</button>
+          <button onclick="window.location.href='./login.html'"class="bookkarlo">Book Now!</button>
 
       </div>
     </center>
@@ -155,10 +155,7 @@
         colour = 'black'
       }
     $('.buy').click(function(){
-        $('#prod').fadeOut(200, function() {
-          $("#prod").attr('src','./images/'+colour+'.png')
-        })
-        .fadeIn(200);
+        $('#prod').attr('src','./images/'+colour+'.png')
       })
     </script>
   </body>
