@@ -137,7 +137,13 @@ body {
   height: auto;
   margin: 40px;
 }
-
+.active::before {
+  width: 24px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #413756;
+  transform: translateX(250%);
+}
 /* Create two equal columns that floats next to each other */
 .column {
   float: left;

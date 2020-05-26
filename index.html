@@ -76,13 +76,13 @@
       </center>
         <div class="row">
           <div class="item"> 
-            <img src="./images/tshirt.png" alt="">
+            <img id="prod" src="./images/black.png" alt="">
               <h1  class="name" style="display: inline;text-align: center;">Kabootrr T-Shirt (half) <i style="display: inline;color:#7cb715;font-size: 0.8rem;" class="fa fa-star"></i> </h1>
               <div class="options">
                 <div class="colors">
-<h1 style="display: inline;font-size: 0.8rem;">Colors<br><i style="display: inline-block;color:#7cb715;font-size: 0.8rem;" class="fa fa-circle"></i>&nbsp;
-<i style="display: inline-block;color:crimson;font-size: 0.8rem;" class="fa fa-circle"></i>&nbsp;
-<i style="display: inline-block;color:black;font-size: 0.8rem;" class="fa fa-circle"></i></h1>
+<h1 style="display: inline;font-size: 0.8rem;">Colors<br><i onclick = "colorGreen()" style="display: inline-block;color:#7cb715;cursor:pointer;font-size: 0.8rem;" class="fa fa-circle hara"></i>&nbsp;
+<i onclick = "colorRed()" style="display: inline-block;color:crimson;font-size: 0.8rem;cursor:pointer" class="fa fa-circle laal"></i>&nbsp;
+<i onclick = "colorBlack()" style="display: inline-block;color:black;font-size: 0.8rem;cursor:pointer" class="fa fa-circle kaala"></i></h1>
                 </div>
                 <div class="sizes">
                   <h1 style="display: inline-block;font-size:0.8rem;">Sizes Available</h1><br> <h1 style="display: inline-block;color:#7cb715;font-size: 0.5rem;transform: translateY(-50%)">S</h1>&nbsp;
@@ -94,18 +94,18 @@
             </div>
           </div>
           <div class="item"> 
-            <img src="./images/tshirt.png" alt="">
+            <img src="./images/black.png" alt="">
           </div>
           <div class="item"> 
-            <img src="./images/tshirt.png" alt="">
+            <img src="./images/black.png" alt="">
           </div>
         </div>
         <div class="row">
           <div class="item"> 
-            <img src="./images/tshirt.png" alt="">
+            <img src="./images/black.png" alt="">
           </div>
           <div class="item"> 
-            <img src="./images/tshirt.png" alt="">
+            <img src="./images/black.png" alt="">
           </div>
         </div>
 
@@ -134,5 +134,29 @@
         <h3 style="margin-top:50px;font-weight: 400;">&copy;kabootrr 2020</h3>
       </div>
     </div>
+    <script>
+      var color = ''
+      function colorRed(){
+        $('.laal').toggleClass('active');
+        $('.kaala').removeClass('active');
+        $('.hara').removeClass('active')
+        colour = 'red'
+      }
+      function colorGreen(){
+        $('.hara').toggleClass('active')
+        $('.kaala').removeClass('active');
+        $('.laal').removeClass('active')
+        colour = 'white'
+      }
+      function colorBlack(){
+        $('.kaala').toggleClass('active');
+        $('.laal').removeClass('active');
+        $('.hara').removeClass('active')
+        colour = 'black'
+      }
+    $('.buy').click(function(){
+        $('#prod').attr('src','./images/'+colour+'.png')
+      })
+    </script>
   </body>
 </html>
