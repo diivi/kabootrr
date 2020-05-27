@@ -16,7 +16,7 @@
           <div class="cinema-seats left">
             <div class="cinema-row row-1" style="margin-top: -10%;">
               <h1 class="rows"></h1>
-              <div class="columns">A</div>
+              <div class="columns" style="margin-top: 50px;">A</div>
               <div class="columns">B</div>
               <div class="columns">C</div>
               <div class="columns">D</div>
@@ -275,10 +275,10 @@
       var kisneki = "";
       var cloned = "";
       window.onload = function checkuser() {
-        // if (currr === "") {
-        //   $("#notlog").remove();
-        //   $("#thanku").hide();
-        // } else {
+        if (currr === "") {
+          $("#notlog").remove();
+          $("#thanku").hide();
+        } else {
           $("#log").remove();
           $("#thanku").hide();
           var docRef = db.collection("users").doc(currr);

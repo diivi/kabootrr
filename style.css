@@ -74,7 +74,7 @@ body {
   left: 50%;
 }
 .options h1 {
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 .hometext {
   width: 80vw;
@@ -163,6 +163,15 @@ body {
     height: auto;
     display: block;
     margin-left: 0px;
+  }
+  .buy {
+    margin-bottom: -20% !important;
+    font-size: smaller;
+    padding: 8% 8% !important;
+  }
+  .name {
+    font-size: 12px !important;
+    top: 12% !important;
   }
   .item img {
     height: 100%;
@@ -299,13 +308,26 @@ body {
   font-weight: 600;
   margin-left: 100%;
   margin-bottom: 5%;
+  transform: translateX(30%);
 }
-@media only screen and (max-width: 1700px) and (min-width: 1000px) {
+@media only screen and (max-width: 1400px) and (min-width: 1000px) {
   .buy {
-    transform: translateX(-50%);
+    transform: translateX(-80%);
+  }
+  .options h1,
+  .options i {
+    font-size: 8px !important;
   }
   .options {
-    bottom: 24px !important;
+    bottom: 30px !important;
+  }
+}
+@media only screen and (max-width: 1700px) and (min-width: 1400px) {
+  .buy {
+    transform: translateX(-30%);
+  }
+  .options {
+    bottom: 30px !important;
   }
 }
 .form input,
