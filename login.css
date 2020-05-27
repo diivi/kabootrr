@@ -48,7 +48,10 @@ body {
   border-radius: 20px;
   font-family: "Montserrat", sans-serif;
 }
-
+*:focus {
+  outline: none;
+  border: 2px solid black;
+}
 h1 {
   width: 70%;
   color: #777;
@@ -83,10 +86,11 @@ input {
 }
 .form-container .field {
   background-color: #ecf0f1;
+  font-family: "Montserrat", sans-serif;
 }
 .form-container .field:focus {
-  border: 2px solid #3498db;
   font-family: "Montserrat", sans-serif;
+  outline-offset: 0;
 }
 .form-container .btn {
   background-color: #413756;
@@ -94,6 +98,7 @@ input {
   line-height: 25px;
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
+  margin-top: 20px;
 }
 .form-container .btn:hover,
 .form-container .btn:active {

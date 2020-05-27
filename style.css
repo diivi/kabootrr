@@ -59,6 +59,9 @@ body {
   width: 100%;
   transition: 0.2s linear;
 }
+*:focus {
+  outline: none;
+}
 .item .name {
   font-size: 18px;
   position: absolute;
@@ -105,6 +108,7 @@ body {
   width: 50%;
   display: inline-block;
 }
+
 .right {
   width: 50%;
   float: right;

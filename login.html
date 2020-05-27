@@ -46,8 +46,8 @@
       <h1>Login</h1>
 
     <div class="form-container">
-      <input type="text" placeholder="Username" class="field" id="user">
-      <input type="password" placeholder="Password" class="field" id="pass">
+      <input type="text" placeholder="Username" class="field" id="user" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'">
+      <input type="password" placeholder="Password" class="field" id="pass" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
       <input type="submit" class="btn" id="submit">
     </div>
 
@@ -61,14 +61,20 @@
         db.collection("users").where("username", "==", user.value.trim())
           .get()
           .then(function (querySnapshot) {
+            console.log(querySnapshot)
+            if(querySnapshot.size!==0){
             querySnapshot.forEach(function (doc) {
               if (pass.value == doc.data().password.trim()) {
                 localStorage.setItem("currentuser", doc.id);
                 window.location.href = "booking.html";
+              }else{
+                alert("Password Incorrect")
               }
             });
-          });
-      });
+          }else{
+            alert("Username Incorrect")
+          };
+      })});
       var inputs = document.getElementsByTagName("input");
       for(i =0 ; i<inputs.length;i++){
       inputs[i].addEventListener("keyup", function (event) {

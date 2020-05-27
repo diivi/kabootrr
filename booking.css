@@ -2,13 +2,6 @@ body {
   margin: 60px;
   background: #111;
 }
-.theatre {
-  display: flex;
-  position: absolute;
-  top: 70%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
 .cinema-seats {
   display: flex;
 }
@@ -30,7 +23,7 @@ body {
   top: 0;
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(44, 194, 69, 0.6);
   border-radius: 7px;
 }
 .left .cinema-row {
@@ -157,7 +150,9 @@ body {
 
 .booked,
 .seatsbooked,
-.hochuki {
+.hochuki,
+.yekarihain,
+.yehochukihai {
   color: white;
 }
 .row {
@@ -192,4 +187,103 @@ html {
   background: yellow !important;
   cursor: default !important;
   pointer-events: none !important;
+}
+
+.screen_out {
+  display: flex;
+  background-color: rgb(41, 38, 38);
+  height: 400px;
+  width: 800px;
+  position: relative;
+  margin-bottom: 60px;
+  border-radius: 10px;
+}
+.screen_in {
+  display: flex;
+  background-color: dimgrey;
+  height: 96%;
+  width: 98%;
+  margin: 1% 1%;
+  border-radius: 10px;
+}
+.theatre {
+  display: flex;
+  position: relative;
+}
+.btn {
+  position: relative;
+  margin-top: 10px;
+  border: none;
+  font-size: 24px;
+  padding: 1% 4%;
+  border-radius: 30px;
+  background: #7cb715;
+  color: white;
+  font-family: Montserrat, "sans-serrif";
+  margin-left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+}
+.poorahall {
+  position: absolute;
+  right: 50%;
+  transform: translate(50%, 0%);
+}
+.info {
+  position: absolute;
+  right: 0px;
+  width: 20vw;
+}
+.seatsbooked,
+.hochuki {
+  font-size: 18px;
+}
+.yehochukihai {
+  margin-top: 200px;
+}
+@media only screen and (max-width: 1000px) {
+  .poorahall {
+    top: 25%;
+  }
+  .btn {
+    margin-top: 10%;
+  }
+  .info {
+    bottom: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+html h1 {
+  font-size: 28px;
+  color: white;
+}
+#log {
+  width: 50vw;
+  margin-left: 25%;
+}
+#log button {
+  margin-top: 10px;
+  border: none;
+  font-size: 24px;
+  padding: 1% 4%;
+  border-radius: 30px;
+  background: #7cb715;
+  color: white;
+  font-family: Montserrat, "sans-serrif";
+  cursor: pointer;
+}
+*:focus {
+  outline: none;
+}
+@media only screen and (max-width: 1700px) {
+  .poorahall {
+    right: 55%;
+  }
+  .info h1 {
+    font-size: 18px;
+  }
+  .info {
+    width: 20vw;
+  }
 }
