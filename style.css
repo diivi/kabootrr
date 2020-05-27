@@ -162,6 +162,9 @@ body {
     display: block;
     margin-left: 0px;
   }
+  #contact {
+    padding-left: 20px;
+  }
   .buy {
     margin-bottom: -20% !important;
     font-size: smaller;
