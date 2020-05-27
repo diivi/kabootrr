@@ -273,6 +273,25 @@ html h1 {
   font-family: Montserrat, "sans-serrif";
   cursor: pointer;
 }
+#thanku {
+  width: 50vw;
+  margin-left: 25%;
+}
+#thanku button {
+  margin-top: 10px;
+  border: none;
+  font-size: 24px;
+  padding: 1% 4%;
+  border-radius: 30px;
+  background: #7cb715;
+  color: white;
+  font-family: Montserrat, "sans-serrif";
+  cursor: pointer;
+}
+#thanku h1 a {
+  text-decoration: none;
+  color: #7cb715;
+}
 *:focus {
   outline: none;
 }
