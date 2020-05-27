@@ -7,7 +7,8 @@
       content="user-scalable=no, width=device-width, initial-scale=1.0"
     />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>Hello</title>
+    <link rel="icon" href="images/kabo.png" >
+    <title>Kabootrr!</title>
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
@@ -36,14 +37,11 @@
     <div id="about" class="ekcheez">
       <div class="left">
         <h1 class="headings">About The Play</h1>
-        <p>
-          For sanctuaries, the kabootrrs had ruled peacefully over their lands. Grains would be pecked at, twigs & straw would make plush palaces, and surfaces would be shat on.  <br> 
-          In the midst of the comfort, the Supreme Kabootrr proclaimed a crowde-in to celebrate and reward the greatest kabootrr in his realm. The economy only boosted in response as did the rambunctiousness of his subjects.  <br>
-          All was well, until a devious, hippie crow went forth on his ethereal quest to become a kabootrr himself. 
-          <br>
-          Come and immerse yourself in our next big play. The next big musical. The next big kabootrr. 
-          The flyest event of your life. 
-          
+        <p id="darkp">
+          For ages, the birds enjoyed a safe homeland. Families lived together in harmony, a stringent yet emphatic king ruled over them and daily bread was earned and enjoyed. Values were strict and sages would multiply each day, but a respectable social order was maintained. <br>
+          Fast forward a couple years, the new age birds seem to be weakening the construction of the pigeons’ society. Economy starts to fall, social ties break and instabilities emerge. The Supreme pigeon is chaotic and so is his kingdom; chaotic enough to be impervious to an enemy. <br>
+           A hippie crow has found his way in, on his ethereal quest to become one of the pigeons.
+          Watch this epic drama unfold with music to immerse yourself in. You don’t want to miss the flyest event of your life
           
         </p>
       </div>
@@ -56,7 +54,7 @@
         <h1 class="headings">Meet the Cast</h1>
         <div class="top">
           <img src="./images/shubh.png" alt="" />
-          <img src="./images/sant.png" alt="" />
+          <img src="./images/sant.png" onclick ="darksite()" alt="" />
           <img src="./images/craw.png" alt="" />
         </div>
         <div class="bottom">
@@ -200,6 +198,9 @@
       </div>
     </div>
     <script>
+      function darksite(){
+        document.getElementById('darkp').innerHTML='For sanctuaries, the kabootrrs had ruled peacefully over their lands. Grains would be pecked at, twigs & straw would make plush palaces, and surfaces would be shat on. <br> In the midst of the comfort, the Supreme Kabootrr proclaimed a Kabootrr Din to celebrate and reward the greatest kabootrr in his realm. The economy only boosted in response as did the rambunctiousness of his subjects.<br> All was well, until a devious, hippie crow went forth on his ethereal quest to become a kabootrr himself. <br> Come and immerse yourself in our next big play. The next big musical. The next big kabootrr. The flyest event of your life. '
+      }
       function haitoh(){
         alert('Colours (Blue & Black) already displayed')
       }
