@@ -244,6 +244,7 @@ html {
 @media only screen and (max-width: 1000px) {
   .poorahall {
     top: 25%;
+    right: 50%;
   }
   .btn {
     margin-top: 10%;
@@ -295,7 +296,7 @@ html h1 {
 *:focus {
   outline: none;
 }
-@media only screen and (max-width: 1700px) {
+@media only screen and (max-width: 1700px) and (min-width: 1001px) {
   .poorahall {
     right: 55%;
   }
