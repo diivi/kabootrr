@@ -41,8 +41,6 @@ body {
 
   background-repeat: no-repeat;
 
-  background-attachment: fixed;
-
   background-size: cover;
 
   background-color: #7cb715;
@@ -93,7 +91,7 @@ body {
 }
 .bookkarlo:hover {
   background-color: white;
-  color: #11e95b;
+  color: #7cb715;
   transition: 0.3s linear;
 }
 .pehle {
