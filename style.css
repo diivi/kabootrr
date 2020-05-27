@@ -306,11 +306,11 @@ body {
   font-weight: 600;
   margin-left: 100%;
   margin-bottom: 5%;
-  transform: translateX(30%);
+  transform: translateX(-40%);
 }
 @media only screen and (max-width: 1400px) and (min-width: 1000px) {
   .buy {
-    transform: translateX(-80%);
+    transform: translateX(0%);
   }
   .options h1,
   .options i {
@@ -320,9 +320,9 @@ body {
     bottom: 30px !important;
   }
 }
-@media only screen and (max-width: 1700px) and (min-width: 1400px) {
+@media only screen and (max-width: 1600px) and (min-width: 1400px) {
   .buy {
-    transform: translateX(-30%);
+    transform: translateX(-100%);
   }
   .options {
     bottom: 30px !important;
