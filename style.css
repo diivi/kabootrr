@@ -323,7 +323,7 @@ body {
     bottom: 30px !important;
   }
 }
-@media only screen and (max-width: 1600px) and (min-width: 1400px) {
+@media only screen and (max-width: 1700px) and (min-width: 1400px) {
   .buy {
     transform: translateX(-100%);
   }
