@@ -49,6 +49,38 @@ body {
   margin-top: -32px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
+.inform {
+  position: relative;
+  margin-left: 42%;
+}
+.straight h1 {
+  position: absolute;
+  margin: 0px;
+  margin-top: -20px;
+  margin-left: 10px;
+}
+.straight {
+  margin-bottom: 20px;
+}
+.straight .seat {
+  width: 35px;
+  height: 50px;
+  border-radius: 7px;
+  background: linear-gradient(
+    to top,
+    #761818,
+    #761818,
+    #761818,
+    #761818,
+    #761818,
+    #b54041,
+    #f3686a
+  );
+  margin-bottom: 10px;
+  margin-top: -32px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  display: inline-block;
+}
 .left .row-2 {
   transform: skew(-13deg);
 }
@@ -190,21 +222,16 @@ html {
   pointer-events: none !important;
 }
 
-.screen_out {
+.stage {
   display: flex;
-  background-color: rgb(41, 38, 38);
+  background-image: url(./images/stage.png);
+  background-position: 100% 0%;
+  background-repeat: no-repeat;
+  background-size: cover;
   height: 400px;
   width: 800px;
   position: relative;
   margin-bottom: 60px;
-  border-radius: 10px;
-}
-.screen_in {
-  display: flex;
-  background-color: dimgrey;
-  height: 96%;
-  width: 98%;
-  margin: 1% 1%;
   border-radius: 10px;
 }
 .theatre {
@@ -247,6 +274,9 @@ html {
   .poorahall {
     top: 25%;
     right: 50%;
+  }
+  .inform {
+    margin-left: 30%;
   }
   .yehochukihai,
   .yekarihain {
@@ -335,5 +365,8 @@ html h1 {
   }
   .info {
     width: 20vw;
+  }
+  .inform {
+    margin-left: 35%;
   }
 }

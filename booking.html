@@ -10,13 +10,27 @@
   </head>
   <body>
     <div id="notlog">
+      <div class="inform">
+        <div class="straight">
+          <div class="seat"></div>
+          <h1 style="display: inline-block;">Available Seats</h1>
+        </div>
+        <div class="straight">
+          <div class="seat different"></div>
+          <h1 style="display: inline-block;">Booked Seats</h1>
+        </div>
+        <div class="straight">
+          <div class="seat same"></div>
+          <h1 style="display: inline-block;">Seats Booked by you</h1>
+        </div>
+      </div>
       <div class="poorahall">
-        <div class="screen_out"></div>
+        <div class="stage"></div>
         <div class="theatre">
           <div class="cinema-seats left">
             <div class="cinema-row row-1" style="margin-top: -10%;">
               <h1 class="rows"></h1>
-              <div class="columns" style="margin-top: 50px;">A</div>
+              <div class="columns" style="margin-top: 25px;">A</div>
               <div class="columns">B</div>
               <div class="columns">C</div>
               <div class="columns">D</div>
@@ -217,7 +231,9 @@
         you've placed in us. Please don't hesitate to
         <a href="./index.html#lokarlobaat">call us</a> if ever a problem should
         arise. We hope to have the pleasure of doing business with you again.
-        Thanks for giving us the opportunity to serve you!
+        Thanks for giving us the opportunity to serve you! <br> Also, don't forget to
+        take your copy of <a href="./script/kabootrr.docx">the script</a> to the
+        venue!
       </h1>
       <button onclick="window.location.href='./index.html'">
         Home
@@ -306,14 +322,18 @@
         finalSeats = document.querySelector(".seatsbooked").innerHTML;
         let numberOfSeatsBooked = finalSeats.split(" ");
         numberOfSeatsBooked = numberOfSeatsBooked.remove("").length;
-        ready = confirm(
-          "Are you sure you want to book the following " +
-            numberOfSeatsBooked +
-            " seats for ₹ " +
-            numberOfSeatsBooked * 200 +
-            "\n" +
-            finalSeats
-        );
+        if (numberOfSeatsBooked > 0) {
+          ready = confirm(
+            "Are you sure you want to book the following " +
+              numberOfSeatsBooked +
+              " seats for ₹ " +
+              numberOfSeatsBooked * 200 +
+              "\n" +
+              finalSeats
+          );
+        } else {
+          ready = alert("Please select atleast one seat");
+        }
         if (ready === true) {
           for (i = 0; i < finalSeats.trim().split(" ").length; i++) {
             db.collection("seats")

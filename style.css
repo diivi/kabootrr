@@ -309,7 +309,7 @@ body {
   font-weight: 600;
   margin-left: 100%;
   margin-bottom: 5%;
-  transform: translateX(-40%);
+  transform: translateX(0%);
 }
 @media only screen and (max-width: 1400px) and (min-width: 1000px) {
   .buy {
