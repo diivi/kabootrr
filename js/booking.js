@@ -68,6 +68,7 @@ firebase.auth().onAuthStateChanged(function (user) {
     var docRef = db.collection("users").doc(currr);
   }
 });
+
 function loadSeats() {
   db.collection("seats")
     .get()
@@ -83,6 +84,7 @@ function loadSeats() {
 }
 
 function showDialog() {
+  redirectBooked = false;
   finalSeats = document.querySelector(".seatsbooked").innerHTML;
   let numberOfSeatsBooked = finalSeats.split(" ");
   numberOfSeatsBooked = numberOfSeatsBooked.remove("").length;
@@ -99,18 +101,29 @@ function showDialog() {
     ready = alert("Please select atleast one seat");
   }
   if (ready === true) {
-    for (i = 0; i < finalSeats.trim().split(" ").length; i++) {
+    for (let i = 0; i < finalSeats.trim().split(" ").length; i++) {
       db.collection("seats")
         .doc(finalSeats.trim().split(" ")[i])
-        .set({
-          seatNumber: finalSeats.trim().split(" ")[i],
-          seatOwner: currr,
-          uid: auth.currentUser.uid,
+        .get()
+        .then(function (doc) {
+          if (doc.exists) {
+            alert(
+              "The following seat was already booked by you or somebody else during this session \n" +
+                finalSeats.trim().split(" ")[i]
+            );
+          } else {
+            db.collection("seats")
+              .doc(finalSeats.trim().split(" ")[i])
+              .set({
+                seatNumber: finalSeats.trim().split(" ")[i],
+                seatOwner: currr,
+                uid: auth.currentUser.uid,
+              });
+          }
         });
     }
     $("#notlog").remove();
     $("#thanku").show();
-    signUserOutwithoutRedirect();
   } else {
     console.log("lolgareeb");
   }
@@ -168,14 +181,6 @@ function signUserOut() {
     .then(function () {
       window.location.href = "./index.html";
     })
-    .catch(function (error) {
-      alert("Could'nt Sign you out!");
-    });
-}
-function signUserOutwithoutRedirect() {
-  auth
-    .signOut()
-    .then(function () {})
     .catch(function (error) {
       alert("Could'nt Sign you out!");
     });
