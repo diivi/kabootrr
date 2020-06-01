@@ -3,14 +3,17 @@
   <head>
     <title>Book Seats!</title>
     <link rel="icon" href="images/kabo.png" />
-    <link rel="stylesheet" href="booking.css" />
+    <link rel="stylesheet" href="./styles/booking.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
-    <script src="fbinit.js"></script>
+    <script src="./js/fbinit.js"></script>
   </head>
   <body>
     <div id="notlog">
+      <div class="user">Logged in as <span id="usershow"></span></div>
+      <div class="userout">Sign Out <span id="usero"></span></div>
       <div class="inform">
         <div class="straight">
           <div class="seat"></div>
@@ -208,7 +211,7 @@
         <h1 class="yekarihain">
           You have Selected the following <span class="booked">0</span> seats:
           <br />
-          <spam class="seatsbooked"></spam>
+          <span class="seatsbooked"></span>
         </h1>
         <h1 class="yehochukihai">
           These seats are already booked: <br /><span class="hochuki"></span>
@@ -218,9 +221,9 @@
     <div id="log">
       <h1>
         For security reasons, you have been logged out of your account. This
-        happpened because either you tried to refresh the page or you are are
-        trying to book seats without logging in. To Log back in, click this
-        button :
+        happpened because either you tried to refresh the page or you logged out
+        from this session and are trying to book seats without logging in. To
+        Log back in, click this button :
       </h1>
       <button onclick="window.location.href='./login.html'">
         Login
@@ -234,180 +237,15 @@
         arise. We hope to have the pleasure of doing business with you again.
         Thanks for giving us the opportunity to serve you! <br />
         Also, don't forget to take your copy of
-        <a href="./script/kabootrr.docx">the script</a> to the venue!
+        <a href="./script/kabootrr.docx">the script</a> to the venue! <br />
+        And feel free to check out the
+        <a href="./discussions.html">discussions</a> page to interact with
+        others who have booked tickets to the show!
       </h1>
-      <button onclick="window.location.href='./index.html'">
+      <button onclick="signUserOut()">
         Home
       </button>
     </div>
-
-    <!-- Seat Selection -->
-    <script type="text/javascript">
-      Array.prototype.remove = function () {
-        var what,
-          a = arguments,
-          L = a.length,
-          ax;
-        while (L && this.length) {
-          what = a[--L];
-          while ((ax = this.indexOf(what)) !== -1) {
-            this.splice(ax, 1);
-          }
-        }
-        return this;
-      };
-      let seatnametemp = "";
-      $(".cinema-seats .seat").on("click", function () {
-        seatnametemp = "";
-        $(this).toggleClass("active"); // yaha if statement
-        let active = $(".seat.active");
-        active.each(function () {
-          let seatsPerRow = $(this).parent().find(".seat").length;
-          if (!$(this).closest(".cinema-seats").hasClass("right")) {
-            let prevRows =
-              $(this).parent(".cinema-row").prevAll(".cinema-row").length - 1;
-            seatnametemp +=
-              (prevRows + 1).toString() +
-              ($(this).index() + 9).toString(36).toUpperCase() +
-              " ";
-          } else {
-            let leftSeats = $(".left").find(".seat").length;
-            let prevRows = $(this).parent(".cinema-row").prevAll(".cinema-row")
-              .length;
-            seatnametemp +=
-              (prevRows + 8).toString() +
-              ($(this).index() + 9).toString(36).toUpperCase() +
-              " ";
-          }
-        });
-        var bookedSeats = document.querySelectorAll(".active").length;
-        document.querySelector(".booked").innerHTML = bookedSeats;
-        document.querySelector(".seatsbooked").innerHTML = seatnametemp;
-      });
-    </script>
-    <!-- Seat Selection end  -->
-    <!-- Verification and Adding Booked seats to firebase -->
-    <script>
-      var currr = localStorage.getItem("currentuser");
-      var bookHogayi = "";
-      var kisneki = "";
-      var cloned = "";
-      window.onload = function checkuser() {
-        if (currr === "") {
-          $("#notlog").remove();
-          $("#thanku").hide();
-        } else {
-          $("#log").remove();
-          $("#thanku").hide();
-          var docRef = db.collection("users").doc(currr);
-          docRef.get().then(function (doc) {
-            console.log("Document data:", doc.data());
-          });
-          db.collection("seats")
-            .get()
-            .then(function (querySnapshot) {
-              querySnapshot.forEach(function (doc) {
-                // doc.data() is never undefined for query doc snapshots
-                bookHogayi += doc.id + " ";
-                kisneki += doc.get("seatOwner") + " ";
-              });
-              document.querySelector(".hochuki").innerHTML = bookHogayi;
-              dekhle(bookHogayi, kisneki);
-            });
-        }
-      };
-      window.onunload = function checkuser() {
-        localStorage.setItem("currentuser", "");
-      };
-      function showDialog() {
-        finalSeats = document.querySelector(".seatsbooked").innerHTML;
-        let numberOfSeatsBooked = finalSeats.split(" ");
-        numberOfSeatsBooked = numberOfSeatsBooked.remove("").length;
-        if (numberOfSeatsBooked > 0) {
-          ready = confirm(
-            "Are you sure you want to book the following " +
-              numberOfSeatsBooked +
-              " seats for ₹ " +
-              numberOfSeatsBooked * 200 +
-              "\n" +
-              finalSeats
-          );
-        } else {
-          ready = alert("Please select atleast one seat");
-        }
-        if (ready === true) {
-          for (i = 0; i < finalSeats.trim().split(" ").length; i++) {
-            db.collection("seats")
-              .doc(finalSeats.trim().split(" ")[i])
-              .set({
-                seatNumber: finalSeats.trim().split(" ")[i],
-                seatOwner: currr,
-              });
-          }
-          $("#notlog").remove();
-          $("#thanku").show();
-        } else {
-          console.log("lolgareeb");
-        }
-      }
-    </script>
-    <!-- Verification and Adding Booked seats to firebase end -->
-    <!-- Disable seats that are already booked -->
-    <script>
-      window.onbeforeunload = function (e) {
-        return "Don't leave";
-      };
-      function dekhle(allBooked, bande) {
-        var eachSeat = allBooked.toString().split(" ");
-        eachSeat.remove("");
-        var eachOwner = bande.split(" ");
-        for (i = 0; i < eachSeat.length; i++) {
-          var number = 0;
-          var numberfromString = 0;
-
-          var str = eachSeat[i];
-          var matches = str.match(/(\d+)/);
-
-          number = matches[0];
-          var letter = eachSeat[i].replace(/[0-9]/g, "").toString();
-          numberfromString = letter.toLowerCase().charCodeAt(0) - 97 + 1;
-          owner = eachOwner[i];
-          getSeat(number, numberfromString, owner);
-        }
-      }
-      function getSeat(num, letr, prsn) {
-        letr += 1;
-        if (num <= 7) {
-          var selector =
-            ".left .row-" +
-            num.toString() +
-            " .seat:nth-child(" +
-            letr.toString() +
-            ")";
-          if (currr === prsn) {
-            $(selector).addClass("same");
-          } else {
-            $(selector).addClass("different");
-          }
-        } else if (num > 7) {
-          num -= 7;
-          var selector =
-            ".right .row-" +
-            num.toString() +
-            " .seat:nth-child(" +
-            letr.toString() +
-            ")";
-          if (currr === prsn) {
-            $(selector).addClass("same");
-          } else {
-            $(selector).addClass("different");
-          }
-        } else if (num >= 10) {
-        }
-      }
-    </script>
-    <!-- Disable seats that are already booked end -->
-    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
+    <script type="text/javascript" src="./js/booking.js"></script>
   </body>
 </html>

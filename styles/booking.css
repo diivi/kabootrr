@@ -187,6 +187,9 @@ body {
 .yehochukihai {
   color: white;
 }
+#usershow {
+  color: #7cb715;
+}
 .row {
   color: white;
   margin-top: -130%;
@@ -224,7 +227,7 @@ html {
 
 .stage {
   display: flex;
-  background-image: url(./images/stage.png);
+  background-image: url(../images/stage.png);
   background-position: 100% 0%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -369,4 +372,22 @@ html h1 {
   .inform {
     margin-left: 35%;
   }
+}
+#log,
+#notlog,
+#thanku {
+  display: none;
+}
+.user {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  color: white;
+}
+.userout {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #7cb715;
+  cursor: pointer;
 }

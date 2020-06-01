@@ -7,7 +7,7 @@ html {
   box-sizing: border-box;
 }
 body {
-  background-image: url(./images/landing.png);
+  background-image: url(../images/landing.png);
 
   background-position: center center;
 
@@ -15,7 +15,7 @@ body {
 
   background-size: cover;
 
-  background-color: #7cb715;  
+  background-color: #7cb715;
   font-family: "Montserrat", sans-serif;
   padding: 50px;
 }

@@ -35,7 +35,7 @@ body {
   background: #7cb715;
 }
 #home {
-  background-image: url(./images/landing.png);
+  background-image: url(../images/landing.png);
 
   background-position: center center;
 
