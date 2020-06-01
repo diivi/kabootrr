@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
-    <script src="fbinit.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-auth.js"></script>
+    <script src="./js/fbinit.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
     <link rel="icon" href="images/kabo.png" >
-    <link rel="stylesheet" type="text/css" href="login.css">
-    <link rel="stylesheet" type="text/css" href="rsp-css/login-rsp.css">
+    <link rel="stylesheet" type="text/css" href="./styles/login.css">
+    <link rel="stylesheet" type="text/css" href="./styles/login-rsp.css">
     <title>Login</title>
   </head>
   <body>
@@ -47,48 +48,13 @@
       <h1>Login</h1>
 
     <div class="form-container">
-      <input type="text" placeholder="Username" class="field" id="user" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Username'">
+      <input type="text" placeholder="Email" class="field" id="user" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'">
       <input type="password" placeholder="Password" class="field" id="pass" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Password'">
       <input type="submit" class="btn" id="submit">
     </div>
 
     
-    <script>
-      const user = document.querySelector("#user");
-      const pass = document.querySelector("#pass");
-      const enter = document.querySelector("#submit");
-
-      enter.addEventListener("click", function () {
-        db.collection("users").where("username", "==", user.value.trim())
-          .get()
-          .then(function (querySnapshot) {
-            console.log(querySnapshot)
-            if(querySnapshot.size!==0){
-            querySnapshot.forEach(function (doc) {
-              if (pass.value == doc.data().password.trim()) {
-                localStorage.setItem("currentuser", doc.id);
-                window.location.href = "booking.html";
-              }else{
-                alert("Password Incorrect")
-              }
-            });
-          }else{
-            alert("Username Incorrect")
-          };
-      })});
-      var inputs = document.getElementsByTagName("input");
-      for(i =0 ; i<inputs.length;i++){
-      inputs[i].addEventListener("keyup", function (event) {
-        if (event.keyCode === 13) {
-        event.preventDefault();
-        document.getElementById("submit").click();
-    }})
-      };
-    </script>
-<script>
-      window.onload = function checkuser() {
-        localStorage.setItem("currentuser","") ;
-      };
-</script>
+    <script src="./js/login.js"></script>
+    
   </body>
 </html>

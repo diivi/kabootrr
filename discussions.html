@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="images/kabo.png" />
+    <link rel="stylesheet" href="./styles/discuss.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
+    <script src="./js/fbinit.js"></script>
+  </head>
+  <h1>Hello! <span class="user"></span></h1>
+  <div id="posts"></div>
+  <div id="addpost">
+    <input type="text" id="topic" />
+    <input type="text" id="msg" />
+    <button type="submit" id="send">Post</button>
+  </div>
+  <body>
+    <script src="./js/discuss.js"></script>
+  </body>
+</html>

@@ -1,0 +1,380 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  font-family: Montserrat, "sans-serrif";
+}
+body {
+  background-color: #f8f8ff;
+  overflow-x: hidden;
+}
+.ekcheez {
+  min-height: 100vh;
+  width: 100vw;
+  padding: 5% 10%;
+}
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: whitesmoke;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #7cb715;
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #7cb715;
+}
+#home {
+  background-image: url(../images/landing.png);
+
+  background-position: center center;
+
+  background-repeat: no-repeat;
+
+  background-size: cover;
+
+  background-color: #7cb715;
+}
+.item {
+  width: 30%;
+  height: auto;
+  display: inline-block;
+  margin-left: 30px;
+  position: relative;
+}
+.item img {
+  height: 100%;
+  width: 100%;
+  transition: 0.2s linear;
+}
+*:focus {
+  outline: none;
+}
+.item .name {
+  font-size: 18px;
+  position: absolute;
+  left: 48%;
+  top: 40px;
+}
+.options {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+}
+.options h1 {
+  font-size: 1rem;
+}
+.hometext {
+  width: 80vw;
+  height: auto;
+  margin-top: -10%;
+}
+.bookkarlo {
+  margin-top: -10%;
+  border-radius: 200px;
+  background-color: transparent;
+  border: 3px solid white;
+  padding: 2% 4%;
+  cursor: pointer;
+  font-size: 32px;
+  color: white;
+}
+.bookkarlo:hover {
+  background-color: white;
+  color: #7cb715;
+  transition: 0.3s linear;
+}
+.pehle {
+  margin-top: 0%;
+}
+.headings {
+  color: #7cb715;
+  font-size: 4rem;
+  font-weight: 500;
+}
+.left {
+  width: 50%;
+  display: inline-block;
+}
+
+.right {
+  width: 50%;
+  float: right;
+  display: inline-block;
+}
+.left p {
+  margin-top: 5%;
+  font-size: 1.4rem;
+  line-height: 44px;
+}
+.right img {
+  width: 60%;
+  float: right;
+  height: auto;
+  display: inline-block;
+  margin-left: 20%;
+  margin-top: 18%;
+}
+.right img:hover {
+  box-shadow: rgba(124, 183, 21, 0.6) 20px 20px;
+  transition: 0.4s ease-in-out;
+}
+#cast {
+  background-color: white;
+}
+#contact {
+  background-color: #ffffff;
+}
+#cast img {
+  width: 20%;
+  height: auto;
+  margin: 40px;
+}
+.active::before {
+  width: 24px;
+  height: 22px;
+  border-radius: 50%;
+  border: 2px solid #413756;
+  transform: translateX(250%);
+}
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+@media only screen and (max-width: 1000px) {
+  .item {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-left: 0px;
+  }
+  #contact {
+    padding-left: 20px;
+  }
+  .buy {
+    margin-bottom: -20% !important;
+    font-size: smaller;
+    padding: 8% 8% !important;
+  }
+  .name {
+    font-size: 12px !important;
+    top: 12% !important;
+  }
+  .item img {
+    height: 100%;
+    width: 100%;
+    display: block;
+  }
+  .map {
+    width: 300px !important;
+    height: 500px !important;
+    display: block;
+    margin-top: 10%;
+    margin-left: 5% !important;
+    margin-right: 0% !important;
+  }
+  .support {
+    margin-top: 5vh !important;
+    margin-left: 2%;
+    color: #7cb715;
+  }
+  .support h1 {
+    font-size: 20px;
+  }
+  .support h3 {
+    font-size: 16px;
+  }
+  .form {
+    width: 108%;
+  }
+  .form h1 {
+    font-size: 30px !important;
+  }
+  .form input,
+  textarea {
+    display: block;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 5px 10px;
+    width: 90% !important;
+    margin: 20px !important;
+    background-color: #cecece;
+    resize: none;
+    resize: none;
+  }
+
+  .formsub {
+    margin-top: 0% !important;
+    border-radius: 200px;
+    background-color: #7cb715;
+    padding: 3% 6% !important;
+    cursor: pointer;
+    font-size: 20px !important;
+    color: white;
+    float: right;
+    border: none;
+    margin-right: 0% !important;
+    margin-bottom: 3% !important;
+  }
+  #home h1 {
+    color: blue;
+  }
+  * {
+    font-size: 10px;
+  }
+  .left p {
+    line-height: 20px;
+  }
+  .left {
+    display: block;
+    width: 100%;
+  }
+  .right {
+    display: block;
+    float: none;
+    width: 100%;
+  }
+  .right img {
+    width: 100%;
+    margin-left: 0px;
+    margin-top: 20px;
+    float: none;
+  }
+  #cast img {
+    width: 100%;
+    margin: 0px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  #cast .headings {
+    margin-bottom: px;
+  }
+  .hometext {
+    width: 100vw;
+    height: auto;
+    transform: translateX(-10%);
+  }
+  .bookkarlo {
+    position: relative;
+    cursor: pointer;
+    padding: 2% 4%;
+    font-size: 22px;
+    color: white;
+  }
+  .bookkarlo:hover {
+    background-color: white;
+    color: #7cb715;
+    transition: 0.3s linear;
+  }
+  .pehle {
+    position: relative;
+    margin-top: 70%;
+  }
+}
+.map {
+  display: inline-block;
+  width: 30vw;
+  margin-left: 15%;
+  margin-right: -10%;
+}
+.form {
+  background-color: #e5e5e5;
+  float: left;
+  display: inline-block;
+  border-radius: 50px;
+  padding: 2% 10%;
+}
+.buy {
+  display: block;
+  background-color: #7cb715;
+  border: none;
+  padding: 5% 5%;
+  cursor: pointer;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  margin-left: 100%;
+  margin-bottom: 5%;
+  transform: translateX(0%);
+}
+@media only screen and (max-width: 1400px) and (min-width: 1000px) {
+  .buy {
+    transform: translateX(0%);
+  }
+  .options h1,
+  .options i {
+    font-size: 8px !important;
+  }
+  .options {
+    bottom: 30px !important;
+  }
+}
+@media only screen and (max-width: 1700px) and (min-width: 1400px) {
+  .buy {
+    transform: translateX(-100%);
+  }
+  .options {
+    bottom: 30px !important;
+  }
+}
+.form input,
+.form textarea {
+  display: block;
+  border-radius: 20px;
+  font-size: 20px;
+  padding: 5px 10px;
+  width: 140%;
+  margin: 20px -20%;
+  background-color: #cecece;
+  border: none;
+  resize: none;
+}
+.msg {
+  display: block;
+  height: 120px;
+}
+.cont {
+  margin-top: 5%;
+}
+.cont .headings {
+  font-size: 2rem;
+}
+.formsub {
+  margin-top: 5%;
+  border-radius: 200px;
+  background-color: #7cb715;
+  padding: 4%8%;
+  cursor: pointer;
+  font-size: 24px;
+  color: white;
+  float: right;
+  border: none;
+  margin-right: -20%;
+}
+.support {
+  margin-top: -22vh;
+  margin-left: 2%;
+  color: #7cb715;
+}
+.support h1 {
+  font-weight: 700;
+}
+input::placeholder,
+textarea::placeholder {
+  opacity: 0.3;
+  color: black;
+}
